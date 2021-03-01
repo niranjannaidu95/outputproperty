@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+a:link, a:visited{
+    background-color: #848684;
+    color: white;
+    padding: 20px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active{
+    background-color: green;
+}
