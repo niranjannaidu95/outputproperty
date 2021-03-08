@@ -13,11 +13,10 @@ export class OrderdetailsComponent implements OnInit,OnChanges, OnDestroy {
 
   public title:string="this is coming from parent";
 
-
 order:Order ={
   name:'niranjan',
   id:7,
-  description:'details'
+  description:'from Bangalore'
 }
 
   ngOnInit(): void {
@@ -28,11 +27,9 @@ console.log(this.order)  }
 
   ngOnDestroy(): void {
 console.log(this.order)  }
-  sendData(){
+ 
 
-  }
-
-  onEventReceivedFromOrder(data:string){
+  onEventReceivedFromOrder(data:any){
 console.log(data)
 }
 

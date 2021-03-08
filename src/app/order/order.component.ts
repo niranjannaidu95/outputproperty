@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import * as EventEmitter from 'events';
+import { Component,EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
 import { Order } from '../order';
 
 @Component({
@@ -7,23 +6,27 @@ import { Order } from '../order';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.scss']
 })
-export class OrderComponent implements OnInit {
+export class OrderComponent implements OnInit,OnChanges,OnDestroy {
 
 @Input() title:string;
 
 @Input() order:Order;
 
-
-@Output() emitter= new EventEmitter()
+@Output() emitter = new EventEmitter()
   
   constructor() { 
   }
-
   ngOnInit(): void {
+    console.log(this.emitter)
   }
+  ngOnChanges(): void {
+console.log(this.emitter)  }
 
-sendMessage(args:string){
-  args+="Hello i am from child order"
-  this.emitter.emit(args)
+  ngOnDestroy(): void {
+console.log(this.emitter)  }
+
+sendData(){
+  var args="hello i am child order"
+ this.emitter.emit(args)
 }
 }
