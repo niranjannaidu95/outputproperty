@@ -1,17 +1,10 @@
 
+<p>Order Title: {{title}}</p>
 
-<p>Order Title: <input type="text" [(ngModel)]="title" /> </p>
-
-<p>Name: <input type="text" [(ngModel)]="order.name" /> </p>
-<p>OrderId: <input type="text" [(ngModel)]="order.id" /> </p>
-<p>Description: <input type="text" [(ngModel)]="order.description"/> </p>
+<button (click)="sendData()" >send data</button>
 
 
 
-<app-order [title]="title" [order]="order"  (emitter)="onEventReceivedFromOrder($event)" >
-
-
-</app-order>
 
 
 

@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { OrderComponent } from './order/order.component';
-import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { FormsModule  } from "@angular/forms";
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 
 
 
@@ -17,8 +17,9 @@ import { FormsModule  } from "@angular/forms";
     HomeComponent,
     ProductsComponent,
     OrderComponent,
-    OrderdetailsComponent,
-      ],
+    OrderdetailsComponent
+
+        ],
   imports: [
     BrowserModule,
     AppRoutingModule,

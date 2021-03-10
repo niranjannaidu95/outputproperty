@@ -1,5 +1,5 @@
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { Order } from '../order';
+import { Component, OnChanges,EventEmitter, OnDestroy, OnInit,Input,Output, SimpleChanges } from '@angular/core';
+import { Orders } from '../orders';
 
 @Component({
   selector: 'app-orderdetails',
@@ -8,29 +8,27 @@ import { Order } from '../order';
 })
 export class OrderdetailsComponent implements OnInit,OnChanges, OnDestroy {
 
-  constructor() { }
- 
 
-  public title:string="this is coming from parent";
+  @Input() title:string;
 
-order:Order ={
-  name:'niranjan',
-  id:7,
-  description:'from Bangalore'
-}
+@Input() orders:Orders;
 
+@Output() emitter = new EventEmitter()
+
+constructor() { }
   ngOnInit(): void {
-    console.log(this.order)
+    console.log(this.orders)  
   }
-  ngOnChanges(): void {
-console.log(this.order)  }
+  
+ngOnChanges(): void {
+  console.log(this.orders)  }
+  
+    ngOnDestroy(): void {
+  console.log(this.orders)  }
 
-  ngOnDestroy(): void {
-console.log(this.order)  }
- 
-
-  onEventReceivedFromOrder(data:any){
-console.log(data)
+sendData(){
+  var args="hello i am child order"
+ this.emitter.emit(args)
+}
 }
 
-}

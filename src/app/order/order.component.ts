@@ -1,32 +1,29 @@
-import { Component,EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
-import { Order } from '../order';
+import { Component,OnInit } from '@angular/core';
+import { Orders } from '../orders';
 
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.scss']
 })
-export class OrderComponent implements OnInit,OnChanges,OnDestroy {
+export class OrderComponent implements OnInit {
 
-@Input() title:string;
 
-@Input() order:Order;
+  public title:string="this is coming from parent";
 
-@Output() emitter = new EventEmitter()
-  
-  constructor() { 
-  }
+orders:Orders ={
+  name:'niranjan',
+  id:7,
+  description:'from Bangalore'
+}
+
   ngOnInit(): void {
-    console.log(this.emitter)
+    console.log(this.orders)
   }
-  ngOnChanges(): void {
-console.log(this.emitter)  }
+  
+ 
 
-  ngOnDestroy(): void {
-console.log(this.emitter)  }
-
-sendData(){
-  var args="hello i am child order"
- this.emitter.emit(args)
+  onEventReceivedFromOrder(data:any){
+console.log(data)
 }
 }

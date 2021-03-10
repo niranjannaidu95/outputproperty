@@ -1,9 +1,18 @@
 
 <h1>This is Order class!!</h1>
 
-<p>Order Title: {{title}}</p>
+
+<p>Order Title: <input type="text" [(ngModel)]="title" /> </p>
+
+<p>Name: <input type="text" [(ngModel)]="orders.name" /> </p>
+<p>OrderId: <input type="text" [(ngModel)]="orders.id" /> </p>
+<p>Description: <input type="text" [(ngModel)]="orders.description"/> </p>
 
 
 
-    <button (click)="sendData()" >send the data</button>
+<app-orderdetails [title]="title" [orders]="orders"  (emitter)="onEventReceivedFromOrder($event)" >
 
+
+</app-orderdetails>
+
+<app-orderdetails></app-orderdetails>
